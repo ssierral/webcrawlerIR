@@ -100,6 +100,10 @@ public class BasicCrawlerController {
                 controller.addSeed("http://sinab.unal.edu.co/");
                 controller.addSeed("http://www.agenciadenoticias.unal.edu.co/");
                 controller.addSeed("http://disi.unal.edu.co/");
+                controller.addSeed("http://www.admisiones.unal.edu.co/");
+                controller.addSeed("http://www.agronomia.unal.edu.co/web/");
+                controller.addSeed("http://www.ing.unal.edu.co/");
+                controller.addSeed("http://www.humanas.unal.edu.co/");
 
                 /*
                  * Start the crawl. This is a blocking operation, meaning that your code
@@ -107,7 +111,7 @@ public class BasicCrawlerController {
                  */
                 controller.startNonBlocking(MyCrawler.class, numberOfCrawlers);
                 
-                Thread.sleep(3800 * 1000);
+                Thread.sleep(200 * 1000);
 
                 // Send the shutdown request and then wait for finishing
                 controller.shutdown();
@@ -115,7 +119,7 @@ public class BasicCrawlerController {
                 //System.out.println(SingletonJSON.getInstance().getObj().toString());
                 try {
  
-		FileWriter file = new FileWriter("/home/xsebastianx/test.json");
+		FileWriter file = new FileWriter("C:\\Users\\USUARIO\\IR\\test.json");
 		file.write(SingletonJSON.getInstance().getObj().toJSONString());
 		file.flush();
 		file.close();
